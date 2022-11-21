@@ -232,7 +232,7 @@ resource "aws_iam_role_policy" "user" {
       ],
       "Effect": "Allow",
       "Resource": [
-        "arn:aws:s3:::${trimsuffix(each.value, "/")}"
+        "arn:aws:s3:::${var.s3_bucket}"
       ]
     },
     {
@@ -245,7 +245,7 @@ resource "aws_iam_role_policy" "user" {
         "s3:DeleteObject",
         "s3:GetObjectVersion"
       ],
-      "Resource": "arn:aws:s3:::${trimsuffix(each.value, "/")}/*"
+      "Resource": "arn:aws:s3:::${var.s3_bucket}/*"
     }
   ]
 }

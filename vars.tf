@@ -136,3 +136,9 @@ variable "tags" {
   default     = {}
   description = "A map of key value pair to assign to resources"
 }
+
+variable "s3_bucket" {
+  type = string
+  default = ""
+  description = "S3 bucket name for files"
+}
